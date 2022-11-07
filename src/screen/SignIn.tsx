@@ -5,6 +5,8 @@ import { Button } from "../components/Button";
 import { useAuth } from '../hooks/useAuth' 
 
 export function SingIn() {
+  const { signIn, user } = useAuth()
+
   return(
       <Center flex={1} bgColor="gray.900" p={7}>
         <Logo width={212} height={40}/>
@@ -14,6 +16,7 @@ export function SingIn() {
           leftIcon={<Icon as={Fontisto} name="google" color="white" size="md"/> }
           type="SECONDARY"
           mt={12}
+          onPress={signIn}
           
         />
         <Text color="white" textAlign="center" mt={4}>
